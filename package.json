@@ -1,0 +1,43 @@
+{
+  "name": "hono-starter",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Hono Starter",
+  "author": "Unstopabloo",
+  "license": "MIT",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy --minify",
+    "start": "node ./dist/src/index.js",
+    "lint": "biome check . --write",
+    "build": "tsc && tsc-alias",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:local-apply": "wrangler d1 migrations apply zkolab-example --local",
+    "db:remote-apply": "wrangler d1 migrations apply zkolab-example --remote"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.14.1",
+    "@hono/zod-openapi": "^0.19.5",
+    "@scalar/hono-api-reference": "^0.8.2",
+    "dotenv": "^16.5.0",
+    "dotenv-expand": "^12.0.2",
+    "drizzle-orm": "^0.42.0",
+    "hono": "^4.7.7",
+    "hono-pino": "^0.8.0",
+    "pino": "^9.6.0",
+    "pino-pretty": "^13.0.0",
+    "stoker": "^1.4.2",
+    "zod": "^3.24.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@cloudflare/workers-types": "^4.20250419.0",
+    "@types/node": "^20.11.17",
+    "drizzle-kit": "^0.31.0",
+    "tsc-alias": "^1.8.15",
+    "tsx": "^4.7.1",
+    "typescript": "^5.8.3",
+    "wrangler": "^4.12.0"
+  }
+}
