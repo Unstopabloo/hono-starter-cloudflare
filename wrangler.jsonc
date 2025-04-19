@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "zkolab-api",
+  "name": "hono-example",
   "main": "src/app.ts",
   "compatibility_date": "2025-04-18",
   "compatibility_flags": [
