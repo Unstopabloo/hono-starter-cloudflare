@@ -19,17 +19,17 @@ export function createApp() {
   app.notFound(notFound);
   app.onError(onError);
 
-  app.use("*", async (c, next) => {
-    const session = await auth.api.getSession({ headers: c.req.raw.headers });
+  // app.use("*", async (c, next) => {
+  //   const session = await auth.api.getSession({ headers: c.req.raw.headers });
 
-    if (!session) {
-      return c.json({ message: "Unauthorized" }, 401);
-    }
+  //   if (!session) {
+  //     return c.json({ message: "Unauthorized" }, 401);
+  //   }
 
-    c.set("user", session.user);
-    c.set("session", session.session);
-    return next();
-  });
+  //   c.set("user", session.user);
+  //   c.set("session", session.session);
+  //   return next();
+  // });
 
   app.on(["POST", "GET"], "/api/auth/**", (c) => auth.handler(c.req.raw));
 
